@@ -30,10 +30,7 @@ NI_FIX_CATEGORY_BUG(UITextView_NIStyleable)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)applyStyleWithRuleSet:(NICSSRuleset*)ruleSet forPseudoClass:(NSString *)pseudo inDOM:(NIDOM*)dom
 {
-    if (ruleSet.hasTextKey) {
-        NIUserInterfaceString *nis = [[NIUserInterfaceString alloc] initWithKey:ruleSet.textKey];
-        [nis attach:self withSelector:@selector(setPlaceholder:)];
-    }
+    [self applyTextViewStyleWithRuleSet:ruleSet inDOM:dom];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
